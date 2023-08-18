@@ -1,10 +1,11 @@
 from src.function import papago
 from PyQt5.QtWidgets import QMainWindow, QLineEdit, QPushButton, QVBoxLayout, QLabel, QWidget, QStackedWidget, QApplication
-from src import NewsWindow
+from src.NewsWindow import NewsWindow
 
 class LoginWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.setGeometry(100, 100, 200, 300) 
 
         self.central_widget = QStackedWidget()
         self.setCentralWidget(self.central_widget)
@@ -27,10 +28,11 @@ class LoginWindow(QMainWindow):
         self.status_label.move(50, 200)
 
         self.load_saved_credentials()
+        self.news_window = None
 
     def load_saved_credentials(self):
         try:
-            with open('credentials.txt', 'r') as file:
+            with open('.\\src\\credentials.txt', 'r') as file:
                 lines = file.readlines()
                 if len(lines) == 2:
                     self.clientId_input.setText(lines[0].strip())
@@ -52,9 +54,10 @@ class LoginWindow(QMainWindow):
         loginCheck = papago.toEng('로그인 테스트용')
 
         if loginCheck != 401:
-            app = QApplication([])
-            news_window = NewsWindow()
-            news_window.show()
-            app.exec_()
+            self.hide()
+            if self.news_window is None:  # NewsWindow 인스턴스가 없으면 생성
+                self.news_window = NewsWindow()
+
+            self.news_window.show()  # 기존에 생성된 인스턴스를 표시
         else:
             print('error')
