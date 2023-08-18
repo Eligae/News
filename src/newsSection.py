@@ -1,7 +1,8 @@
 import requests
 from bs4 import BeautifulSoup as bs
-import var    # for global variable
 import re
+
+import var    # for global variable
 
 def getPages():
     pages = requests.get("https://news.naver.com/")
@@ -13,7 +14,7 @@ def getPages():
     for link in target_links:
         value = link['href'].split('/main/main.naver?mode=LSD&mid=shm&sid1=')[-1]
         text = link.get_text(strip=True) 
-        values_dict[value] = text
+        values_dict[text] = value
 
     return values_dict
     
@@ -36,5 +37,11 @@ def getArticle(url):
     pages = requests.get(url, headers=var.headers)
     soup = bs(pages.content, 'html.parser')
     
-    return soup
-
+    article_content = soup.find('article', class_='go_trans _article_content')
+    if article_content:
+        for img in article_content.find_all('img'):
+            img.extract()
+        text = article_content.get_text(strip=True)
+        return text
+    else:
+        return "기사 내용 찾기 불가.."
