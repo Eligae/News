@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup as bs
-import var      # for global variable
+import var    # for global variable
 import re
 
 def getPages():
@@ -35,13 +35,6 @@ def getNewsLinks(genre):
 def getArticle(url):
     pages = requests.get(url, headers=var.headers)
     soup = bs(pages.content, 'html.parser')
-
-
-
-
-
-
-
-
-
+    
+    return soup
 
