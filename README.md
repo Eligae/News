@@ -22,3 +22,28 @@ if(rescode==200):
 else:
     print("Error Code:" + rescode)
 ```
+```
+python
+├─ main.py
+├─ README.md
+└─ src
+   ├─ credentials.txt
+   ├─ function
+   │  ├─ newsSection.py
+   │  ├─ papago.py
+   │  ├─ var.py
+   │  └─ __pycache__
+   │     ├─ papago.cpython-311.pyc
+   │     └─ var.cpython-311.pyc
+   ├─ loginWindow.py
+   ├─ NewsWindow.py
+   ├─ test
+   │  ├─ articleTest.json
+   │  └─ test.py
+   └─ __pycache__
+      ├─ loginWindow.cpython-311.pyc
+      ├─ newsSection.cpython-311.pyc
+      ├─ papago.cpython-311.pyc
+      └─ var.cpython-311.pyc
+
+```

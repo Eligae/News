@@ -4,6 +4,8 @@ import re
 
 import var    # for global variable
 
+# naver news에 분야별 값 빼오기
+# return as {"경제": 100, "정치": 101,...}
 def getPages():
     pages = requests.get("https://news.naver.com/")
     soup = bs(pages.content, 'html.parser')
@@ -17,7 +19,9 @@ def getPages():
         values_dict[text] = value
 
     return values_dict
-    
+
+# naver news의 분야에 해당하는 뉴스 기사 긁어오기
+# return as ['URL1', 'URL2'...]
 def getNewsLinks(genre):
     url = f"https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1={genre}"
     pages = requests.get(url, headers=var.headers)
@@ -25,14 +29,16 @@ def getNewsLinks(genre):
     
     pattern = re.compile(r"https://n\.news\.naver\.com/mnews/article/")
     
-    article_links = set()  # set 자료형을 사용하여 중복 링크 제거
+    article_links = set()
 
     for link in soup.find_all('a', href=True):
         if pattern.search(link['href']):
             article_links.add(link['href'])
     
-    return list(article_links)  # set을 다시 리스트로 변환하여 반환
-  
+    return list(article_links)
+
+# URL에 해당하는 기사내용만 가져오기(img 제외)
+# return as string
 def getArticle(url):
     pages = requests.get(url, headers=var.headers)
     soup = bs(pages.content, 'html.parser')
