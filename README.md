@@ -22,6 +22,7 @@ if(rescode==200):
 else:
     print("Error Code:" + rescode)
 ```
+## 파일 구조
 ```
 python
 ├─ main.py
@@ -47,3 +48,5 @@ python
       └─ var.cpython-311.pyc
 
 ```
+## 설명
+```main.py```에서 실행하면, ```loginWindow.py```에서 login을 확인하고, ```NewsWindow.py```를 띄워 뉴스에 대해 분석합니다. 

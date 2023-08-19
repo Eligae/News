@@ -1,5 +1,5 @@
-from src.function import papago
-from PyQt5.QtWidgets import QMainWindow, QLineEdit, QPushButton, QVBoxLayout, QLabel, QWidget, QStackedWidget, QApplication
+import src.function.papago as papago
+from PyQt5.QtWidgets import QMainWindow, QLineEdit, QPushButton, QVBoxLayout, QLabel, QWidget, QStackedWidget
 from src.NewsWindow import NewsWindow
 
 class LoginWindow(QMainWindow):
