@@ -8,5 +8,4 @@ class NewsWindow(QMainWindow):
 
         self.setWindowTitle("News Window")
         self.setGeometry(100, 100, 400, 300)
-
         

@@ -22,16 +22,172 @@ if(rescode==200):
 else:
     print("Error Code:" + rescode)
 ```
-## 파일 구조
+## 설명
+```main.py```에서 실행하면, ```loginWindow.py```에서 login을 확인하고, ```NewsWindow.py```를 띄워 뉴스에 대해 분석합니다. 
 ```
 python
+├─ DATA
+│  ├─ IT
+│  │  └─ 과학
+│  │     ├─ 1.txt
+│  │     ├─ 10.txt
+│  │     ├─ 11.txt
+│  │     ├─ 12.txt
+│  │     ├─ 13.txt
+│  │     ├─ 14.txt
+│  │     ├─ 15.txt
+│  │     ├─ 16.txt
+│  │     ├─ 17.txt
+│  │     ├─ 18.txt
+│  │     ├─ 19.txt
+│  │     ├─ 2.txt
+│  │     ├─ 20.txt
+│  │     ├─ 21.txt
+│  │     ├─ 22.txt
+│  │     ├─ 3.txt
+│  │     ├─ 4.txt
+│  │     ├─ 5.txt
+│  │     ├─ 6.txt
+│  │     ├─ 7.txt
+│  │     ├─ 8.txt
+│  │     └─ 9.txt
+│  ├─ 경제
+│  │  ├─ 1.txt
+│  │  ├─ 10.txt
+│  │  ├─ 11.txt
+│  │  ├─ 12.txt
+│  │  ├─ 13.txt
+│  │  ├─ 14.txt
+│  │  ├─ 15.txt
+│  │  ├─ 16.txt
+│  │  ├─ 17.txt
+│  │  ├─ 18.txt
+│  │  ├─ 19.txt
+│  │  ├─ 2.txt
+│  │  ├─ 20.txt
+│  │  ├─ 21.txt
+│  │  ├─ 22.txt
+│  │  ├─ 23.txt
+│  │  ├─ 24.txt
+│  │  ├─ 25.txt
+│  │  ├─ 3.txt
+│  │  ├─ 4.txt
+│  │  ├─ 5.txt
+│  │  ├─ 6.txt
+│  │  ├─ 7.txt
+│  │  ├─ 8.txt
+│  │  └─ 9.txt
+│  ├─ 사회
+│  │  ├─ 1.txt
+│  │  ├─ 10.txt
+│  │  ├─ 11.txt
+│  │  ├─ 12.txt
+│  │  ├─ 13.txt
+│  │  ├─ 14.txt
+│  │  ├─ 15.txt
+│  │  ├─ 16.txt
+│  │  ├─ 17.txt
+│  │  ├─ 18.txt
+│  │  ├─ 19.txt
+│  │  ├─ 2.txt
+│  │  ├─ 20.txt
+│  │  ├─ 21.txt
+│  │  ├─ 22.txt
+│  │  ├─ 23.txt
+│  │  ├─ 24.txt
+│  │  ├─ 25.txt
+│  │  ├─ 3.txt
+│  │  ├─ 4.txt
+│  │  ├─ 5.txt
+│  │  ├─ 6.txt
+│  │  ├─ 7.txt
+│  │  ├─ 8.txt
+│  │  └─ 9.txt
+│  ├─ 생활
+│  │  └─ 문화
+│  │     ├─ 1.txt
+│  │     ├─ 10.txt
+│  │     ├─ 11.txt
+│  │     ├─ 12.txt
+│  │     ├─ 13.txt
+│  │     ├─ 14.txt
+│  │     ├─ 15.txt
+│  │     ├─ 16.txt
+│  │     ├─ 17.txt
+│  │     ├─ 18.txt
+│  │     ├─ 19.txt
+│  │     ├─ 2.txt
+│  │     ├─ 20.txt
+│  │     ├─ 21.txt
+│  │     ├─ 22.txt
+│  │     ├─ 3.txt
+│  │     ├─ 4.txt
+│  │     ├─ 5.txt
+│  │     ├─ 6.txt
+│  │     ├─ 7.txt
+│  │     ├─ 8.txt
+│  │     └─ 9.txt
+│  ├─ 세계
+│  │  ├─ 1.txt
+│  │  ├─ 10.txt
+│  │  ├─ 11.txt
+│  │  ├─ 12.txt
+│  │  ├─ 13.txt
+│  │  ├─ 14.txt
+│  │  ├─ 15.txt
+│  │  ├─ 16.txt
+│  │  ├─ 17.txt
+│  │  ├─ 18.txt
+│  │  ├─ 19.txt
+│  │  ├─ 2.txt
+│  │  ├─ 20.txt
+│  │  ├─ 21.txt
+│  │  ├─ 22.txt
+│  │  ├─ 23.txt
+│  │  ├─ 24.txt
+│  │  ├─ 25.txt
+│  │  ├─ 3.txt
+│  │  ├─ 4.txt
+│  │  ├─ 5.txt
+│  │  ├─ 6.txt
+│  │  ├─ 7.txt
+│  │  ├─ 8.txt
+│  │  └─ 9.txt
+│  └─ 정치
+│     ├─ 1.txt
+│     ├─ 10.txt
+│     ├─ 11.txt
+│     ├─ 12.txt
+│     ├─ 13.txt
+│     ├─ 14.txt
+│     ├─ 15.txt
+│     ├─ 16.txt
+│     ├─ 17.txt
+│     ├─ 18.txt
+│     ├─ 19.txt
+│     ├─ 2.txt
+│     ├─ 20.txt
+│     ├─ 21.txt
+│     ├─ 22.txt
+│     ├─ 23.txt
+│     ├─ 24.txt
+│     ├─ 25.txt
+│     ├─ 3.txt
+│     ├─ 4.txt
+│     ├─ 5.txt
+│     ├─ 6.txt
+│     ├─ 7.txt
+│     ├─ 8.txt
+│     └─ 9.txt
 ├─ main.py
 ├─ README.md
 └─ src
    ├─ credentials.txt
    ├─ function
+   │  ├─ DATA
    │  ├─ newsSection.py
    │  ├─ papago.py
+   │  ├─ textConfig.py
    │  ├─ var.py
    │  └─ __pycache__
    │     ├─ papago.cpython-311.pyc
@@ -44,9 +200,8 @@ python
    └─ __pycache__
       ├─ loginWindow.cpython-311.pyc
       ├─ newsSection.cpython-311.pyc
+      ├─ NewsWindow.cpython-311.pyc
       ├─ papago.cpython-311.pyc
       └─ var.cpython-311.pyc
 
 ```
-## 설명
-```main.py```에서 실행하면, ```loginWindow.py```에서 login을 확인하고, ```NewsWindow.py```를 띄워 뉴스에 대해 분석합니다. 

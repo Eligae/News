@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup as bs
 import re
+import os
 
 import var    # for global variable
 
@@ -51,3 +52,24 @@ def getArticle(url):
         return text
     else:
         return "기사 내용 찾기 불가.."
+    
+def saveTextToFolder(text, path, fileName):
+    if not os.path.exists(path):
+        os.makedirs(path)
+    path = os.path.join(path, fileName)
+
+    with open(path, 'w', encoding='utf-8') as file:
+        file.write(text)
+
+i = 1    
+valuesDict = getPages()
+for key, value in valuesDict.items():
+    link = getNewsLinks(value)
+    print(f'doing link {key} : {value}..')
+    for url in link:
+        article = getArticle(url)
+        articleRe = article.replace('.', '\n')
+        print(f'saving to \\DATA\\{key[0]}...')
+        saveTextToFolder(articleRe, f'.\\DATA\\{key}', f'{i}.txt')
+        i += 1
+    i = 1
